@@ -3,14 +3,10 @@
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   margin: 0;
-  background: #111;
+  background: #3c2a21;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-.fa-magnifying-glass {
-  color: white;
 }
 
 .flex-center {
@@ -35,7 +31,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #111;
+  background-color: #3c2a21;
 }
 
 #uv-error {
@@ -45,80 +41,18 @@ body {
 
 #uv-error-code {
   font-size: 12px;
-  color: #fff;
+  color: #e5e5cb;
   font-family: "Courier New", Courier, monospace;
 }
 
-#uv-register-sw {
-  color: white;
-  background: #555555;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  border-radius: 6px;
-  padding: 16px 20px;
-  line-height: 16px;
-  display: none;
-}
-
-#uv-register-sw:active {
-  background: #333333;
-}
-
-#uv-register-sw.show {
-  display: block;
-}
-
-.logo {
-  width: 150px;
-  height: 150px;
-}
-
-.logo-wrapper .text {
-  font-size: 75px;
-  color: #fff;
-}
-
 .logo-wrapper h1 {
-  color: white;
-}
-
-footer {
-  margin: 0 5vw;
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
-  line-height: 30px;
-  margin-bottom: 20px;
-}
-
-footer > div {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 15px;
-}
-
-footer a,
-footer span {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #fff;
-  font-size: 15px;
-}
-
-footer a {
-  cursor: pointer;
-}
-
-footer a:hover {
-  text-decoration: underline;
+  color: #e5e5cb;
+  font-size: 2.5em;
+  margin-bottom: 30px;
 }
 
 .desc p {
-  width: 560px;
-  color: rgba(253, 253, 253, 0.514);
+  color: rgba(229, 229, 203, 0.7);
 }
 
 #uv-address {
@@ -126,59 +60,85 @@ footer a:hover {
   font-family: inherit;
   padding: 0px 17px;
   height: 48px;
-  border: 1px solid rgb(255, 255, 255, 0.2);
-  color: var(--text-color);
-  border-radius: 3px;
+  border: 1px solid #d5cea3;
+  color: #e5e5cb;
+  border-radius: 50px;
   outline: none;
   width: 350px;
   margin-top: 5px;
-  border-radius: 50px;
-  color: #fff;
-  transition: border-radius 0.1s;
+  transition: all 0.3s ease;
 }
 
 #uv-address:focus {
-  border: 1px solid rgba(253, 253, 253, 0.514);
-  border-radius: 6px;
+  border: 1px solid #e5e5cb;
+  box-shadow: 0 0 10px rgba(229, 229, 203, 0.3);
 }
 
-.credit {
-  border-radius: 10px;
-  padding: 10px;
-  display: block;
-  border: #fff 1px solid;
-  color: #fff;
+#uv-address::placeholder {
+  color: rgba(229, 229, 203, 0.5);
+}
+
+.nav-bar {
+  position: fixed;
+  top: -50px;
+  left: 0;
+  right: 0;
+  background: rgba(44, 24, 16, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 12px 20px;
   display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 15px;
+  align-items: center;
+  gap: 15px;
+  z-index: 1000;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.credit label {
-  margin-left: auto;
-  margin-right: 15px;
+.nav-trigger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  z-index: 999;
 }
 
-.credit a,
-.credit label {
-  color: white;
-  text-decoration: underline;
-  text-align: right;
+.nav-trigger:hover + .nav-bar,
+.nav-bar:hover {
+  transform: translateY(50px);
 }
 
-.credit pre {
-  display: none;
-  width: 100%;
+.nav-controls {
+  display: flex;
+  gap: 10px;
 }
 
-.credit label::after {
-  content: "show license";
+.nav-btn {
+  background: #3c2a21;
+  border: none;
+  color: #e5e5cb;
+  padding: 8px 12px;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 15px;
+  transition: all 0.2s ease;
 }
 
-.credit input:checked + label::after {
-  content: "hide license";
+.nav-btn:hover {
+  background: #4a3428;
+  transform: translateY(-2px);
 }
 
-.credit input:checked ~ pre {
-  display: block;
+.url-bar {
+  flex-grow: 1;
+}
+
+#current-url {
+  width: 100%;
+  padding: 8px 15px;
+  background: #3c2a21;
+  border: 1px solid #d5cea3;
+  border-radius: 6px;
+  color: #e5e5cb;
+  font-size: 14px;
 }
